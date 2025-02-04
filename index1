@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIMARI POSTRES</title>
+    <title>AIMARI DETAILS</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 
@@ -120,20 +120,20 @@
     <!-- Sin las decoraciones de las esquinas eliminadas -->
 
     <div class="container" id="catalogos">
-        <img src="aimari postres.jpg" alt="Logo Aimari Postres" class="logo">
-        <h1>AIMARI POSTRES</h1>
-        <p class="welcome-message">¡Bienvenidos a nuestro catálogo de postres deliciosos! 🍰✨</p>
-        <button onclick="window.open('catalogo san salentin - aimari postres.pdf', '_blank')">CATÁLOGO</button>
+        <img src="detalles.jpg" alt="Logo Aimari Details" class="logo">
+        <h1>AIMARI DETAILS</h1>
+        <p class="welcome-message">¡Explora los detalles y el arte de nuestros postres! 🎂💖</p>
+        <button onclick="window.open('catalogo.pdf', '_blank')">CATÁLOGO</button>
         <button onclick="mostrarSeccion('contactenos')">CONTACTENOS</button>
     </div>
     
     <div class="container hidden" id="contactenos">
         <h1>Contáctenos</h1>
         <p class="welcome-message">Síguenos en nuestras redes sociales y comparte la magia de AIMARI. 💖</p>
-        <button onclick="window.open('https://www.tiktok.com/@aimari_postres?is_from_webapp=1&sender_device=pc', '_blank')">
+        <button onclick="window.open('https://www.tiktok.com/@aimari_details', '_blank')">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"> TikTok
         </button>
-        <button onclick="window.open('https://www.instagram.com/aimari_postres?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')">
+        <button onclick="window.open('https://www.instagram.com/aimari_details/', '_blank')">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
         </button>
         <br>
