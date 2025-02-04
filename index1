@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIMARI POSTRES</title>
+    <title>AIMARI DETAILS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
-            background: url('aimari postres.jpg') no-repeat center center fixed;
+            background: url('aimari detalles.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .container {
@@ -69,18 +69,18 @@
 </head>
 <body>
     <div class="container" id="catalogos">
-        <img src="aimari postres.jpg" alt="Logo Aimari Postres" class="logo">
+        <img src="aimari detalles.jpg" alt="Logo Aimari Postres" class="logo">
         <h1>AIMARI POSTRES</h1>
-        <button onclick="window.open('catalogo san salentin - aimari postres.pdf', '_blank')">CATÁLOGO</button>
+        <button onclick="window.open('catalogo san valentin - aimari details.pdf', '_blank')">CATÁLOGO</button>
         <button onclick="mostrarSeccion('contactenos')">CONTACTENOS</button>
     </div>
     
     <div class="container hidden" id="contactenos">
         <h1>Contáctenos</h1>
-        <button onclick="window.open('https://www.tiktok.com/@aimari_postres?is_from_webapp=1&sender_device=pc', '_blank')">
+        <button onclick="window.open('https://www.tiktok.com/@aimari_details', '_blank')">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"> TikTok
         </button>
-        <button onclick="window.open('https://www.instagram.com/aimari_postres?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')">
+        <button onclick="window.open('https://www.instagram.com/aimari_details/', '_blank')">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
         </button>
         <br>
