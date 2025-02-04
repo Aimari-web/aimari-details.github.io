@@ -8,8 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
+            margin: 50px;
             background: url('aimari detalles.jpg') no-repeat center center fixed;
             background-size: cover;
         }
@@ -24,7 +23,7 @@
             margin-bottom: 20px; /* Espacio entre secciones */
         }
         .logo {
-            width: 300px;
+            width: 300px; /* Aumenté el tamaño a 300px */
             height: auto;
             margin-bottom: 10px;
         }
@@ -57,7 +56,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 30px; /* Espacio respecto a la sección anterior */
         }
     </style>
     <script>
@@ -69,15 +68,13 @@
     </script>
 </head>
 <body>
-    <!-- Sección Catálogos -->
     <div class="container" id="catalogos">
-        <img src="aimari_detalles.jpg" alt="Logo Aimari Details" class="logo">
-        <h1>AIMARI DETAILS</h1>
-        <button onclick="window.open('catalogo_san_valentin_aimari_details.pdf', '_blank')">CATÁLOGO</button>
+        <img src="aimari detalles.jpg" alt="Logo Aimari Postres" class="logo">
+        <h1>AIMARI POSTRES</h1>
+        <button onclick="window.open('catalogo san valentin - aimari details.pdf', '_blank')">CATÁLOGO</button>
         <button onclick="mostrarSeccion('contactenos')">CONTACTENOS</button>
     </div>
     
-    <!-- Sección Contáctenos -->
     <div class="container hidden" id="contactenos">
         <h1>Contáctenos</h1>
         <button onclick="window.open('https://www.tiktok.com/@aimari_details', '_blank')">
@@ -89,11 +86,11 @@
         <br>
         <button onclick="mostrarSeccion('catalogos')">Volver</button>
     </div>
-
+    
     <!-- Botón "Volver a la Página Principal" centrado -->
     <div class="volver-container">
         <button onclick="window.location.href='https://aimari-web.github.io/'">Volver a la página principal</button>
     </div>
-
+    
 </body>
 </html>
