@@ -8,8 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 50px;
-            background: url('aimari postres.jpg') no-repeat center center fixed;
+            margin: 0;
+            padding: 0;
+            background: url('aimari_postres.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .container {
@@ -17,10 +18,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px; /* Espacio entre secciones */
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
         }
         .logo {
             width: 250px;
@@ -56,7 +59,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30px; /* Espacio respecto a la sección anterior */
+            margin-top: 20px;
         }
     </style>
     <script>
@@ -70,19 +73,19 @@
 <body>
     <!-- Sección Catálogos -->
     <div class="container" id="catalogos">
-        <img src="aimari detalles.jpg" alt="Logo Aimari Details" class="logo">
+        <img src="aimari_detalles.jpg" alt="Logo Aimari Details" class="logo">
         <h1>AIMARI DETAILS</h1>
-        <button onclick="window.open('catalogo san valentin - aimari details.pdf', '_blank')">CATÁLOGO</button>
+        <button onclick="window.open('catalogo_san_valentin_aimari_details.pdf', '_blank')">CATÁLOGO</button>
         <button onclick="mostrarSeccion('contactenos')">CONTACTENOS</button>
     </div>
     
     <!-- Sección Contáctenos -->
     <div class="container hidden" id="contactenos">
         <h1>Contáctenos</h1>
-        <button onclick="window.open('https://www.tiktok.com/@aimari_details?is_from_webapp=1&sender_device=pc', '_blank')">
+        <button onclick="window.open('https://www.tiktok.com/@aimari_details', '_blank')">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"> TikTok
         </button>
-        <button onclick="window.open('https://www.instagram.com/aimari_details?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')">
+        <button onclick="window.open('https://www.instagram.com/aimari_details/', '_blank')">
             <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
         </button>
         <br>
