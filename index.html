@@ -10,9 +10,9 @@
         body {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            margin: 50px;
-            background-color: #fef6f8; /* Color de fondo similar a la interfaz principal */
-            padding: 50px;
+            margin: 0;
+            background-color: #fef6f8; /* Color de fondo principal */
+            padding: 0;
             position: relative;
         }
 
@@ -21,14 +21,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Espacio entre secciones */
+            width: 100%;
+            max-width: 800px; /* Limita el tamaño máximo del contenedor */
+            margin-left: auto;
+            margin-right: auto;
+            background: transparent; /* Fondo transparente */
         }
 
         .logo {
-            width: 300px;
+            width: 100%;
+            max-width: 300px; /* Aumenté el tamaño a 300px */
             height: auto;
             margin-bottom: 10px;
         }
@@ -66,34 +71,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
-        }
-
-        /* Decoraciones en las esquinas */
-        .decor {
-            position: absolute;
-            width: 80px;
-            opacity: 0.7;
-        }
-
-        .decor-top-left {
-            top: 20px;
-            left: 20px;
-        }
-
-        .decor-top-right {
-            top: 20px;
-            right: 20px;
-        }
-
-        .decor-bottom-left {
-            bottom: 20px;
-            left: 20px;
-        }
-
-        .decor-bottom-right {
-            bottom: 20px;
-            right: 20px;
+            margin-top: 30px; /* Espacio respecto a la sección anterior */
         }
 
         /* Mensaje de bienvenida */
@@ -105,22 +83,29 @@
             font-style: italic;
         }
 
-        /* Efecto de rosas flotantes rojas usando una imagen */
-        .rose {
-            position: absolute;
-            top: -50px;
-            width: 50px;
-            height: 50px;
-            background-image: url('rose-red.png'); 
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: floatRose 5s infinite ease-in-out;
-        }
+        /* Media query para mejorar la visualización en pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
 
-        @keyframes floatRose {
-            0% { top: -50px; opacity: 0.9; transform: scale(0.5); }
-            50% { top: 50vh; opacity: 1; transform: scale(1); }
-            100% { top: 100vh; opacity: 0.9; transform: scale(0.5); }
+            .container {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .logo {
+                max-width: 250px;
+            }
+
+            button {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .welcome-message {
+                font-size: 20px;
+            }
         }
     </style>
     <script>
@@ -132,11 +117,7 @@
     </script>
 </head>
 <body>
-    <!-- Elementos decorativos -->
-    <img src="rosa.jpg" class="decor decor-top-left" alt="Decoración">
-    <img src="rosa.jpg" class="decor decor-top-right" alt="Decoración">
-    <img src="rosa.jpg" class="decor decor-bottom-left" alt="Decoración">
-    <img src="rosa.jpg" class="decor decor-bottom-right" alt="Decoración">
+    <!-- Sin las decoraciones de las esquinas eliminadas -->
 
     <div class="container" id="catalogos">
         <img src="detalles.jpg" alt="Logo Aimari Details" class="logo">
@@ -163,16 +144,5 @@
     <div class="volver-container">
         <button onclick="window.location.href='https://aimari-web.github.io/'">Volver a la página principal</button>
     </div>
-    
-    <!-- Contenedor de rosas flotantes -->
-    <div class="rose" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="rose" style="left: 20%; animation-delay: 0.5s;"></div>
-    <div class="rose" style="left: 30%; animation-delay: 1s;"></div>
-    <div class="rose" style="left: 40%; animation-delay: 1.5s;"></div>
-    <div class="rose" style="left: 50%; animation-delay: 2s;"></div>
-    <div class="rose" style="left: 60%; animation-delay: 2.5s;"></div>
-    <div class="rose" style="left: 70%; animation-delay: 3s;"></div>
-    <div class="rose" style="left: 80%; animation-delay: 3.5s;"></div>
-    <div class="rose" style="left: 90%; animation-delay: 4s;"></div>
 </body>
 </html>
