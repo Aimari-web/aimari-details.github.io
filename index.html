@@ -22,15 +22,13 @@
             width: 100%;
             margin: auto;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         h1 {
             color: #e63946;
             font-size: clamp(22px, 5vw, 28px);
-        }
-
-        p {
-            font-size: clamp(16px, 4vw, 18px);
         }
 
         button {
@@ -43,6 +41,7 @@
             cursor: pointer;
             margin: 10px auto;
             display: block;
+            transition: all 0.3s ease;
         }
 
         .si {
@@ -53,12 +52,9 @@
         .no {
             background-color: #6c757d;
             color: white;
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .hidden {
-            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         img {
@@ -73,50 +69,59 @@
             font-size: clamp(16px, 4vw, 18px);
             color: #e63946;
         }
-
-        .mensaje-no {
-            margin-top: 10px;
-            color: #555;
-            font-size: 15px;
-        }
     </style>
 </head>
 <body>
 
 <div class="card" id="menu">
     <h1>💘 ¿Quieres ser mi San Valentín? 💘</h1>
+
     <button class="si" onclick="aceptar()">Sí ❤️</button>
-
-    <!-- BOTÓN NO BLOQUEADO -->
-    <button class="no" onclick="intentoNo()">No 😅</button>
-
-    <div id="mensajeNo" class="mensaje-no hidden">
-        ❌ Esta opción no está disponible para ti 😌<br>
-        Selecciona <strong>SÍ</strong> y continuamos 💘
-    </div>
+    <button class="no" id="btnNo">No 😅</button>
 </div>
 
 <div class="card hidden" id="si">
     <h1>💖 Entonces ya está decidido 💖</h1>
 
-    <!-- FOTO QUE SUBES TÚ -->
     <img src="foto_san_valentin.jpg" alt="Nuestra foto">
 
     <div class="frase">
-        Gracias por ser mi persona favorita.  
-        Este San Valentín y todos los que vienen 💕
+        Gracias mi ram por aceptar ser mi San Valentín una vez más. 
+        Eres el amor de mi vida, y mi mayor motivacion junto a nuestra Tanita💕, nuestros bebes perrunos y gatunos💕. 
+        Son mi familia y siempre me esforzaré por darles todo lo que se merecen, gracias por hacerme el hombre mas feliz del mundo💕
+        Te amo, amor de mi vida💕
+ 
     </div>
 </div>
 
 <script>
+    const btnNo = document.getElementById("btnNo");
+    const card = document.getElementById("menu");
+
     function aceptar() {
-        document.getElementById("menu").classList.add("hidden");
+        card.classList.add("hidden");
         document.getElementById("si").classList.remove("hidden");
     }
 
-    function intentoNo() {
-        document.getElementById("mensajeNo").classList.remove("hidden");
+    function moverBoton() {
+        const cardRect = card.getBoundingClientRect();
+        const btnRect = btnNo.getBoundingClientRect();
+
+        const maxX = cardRect.width - btnRect.width - 20;
+        const maxY = cardRect.height - btnRect.height - 20;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        btnNo.style.left = x + "px";
+        btnNo.style.top = y + "px";
     }
+
+    // Para mouse
+    btnNo.addEventListener("mouseenter", moverBoton);
+
+    // Para celular (touch)
+    btnNo.addEventListener("touchstart", moverBoton);
 </script>
 
 </body>
