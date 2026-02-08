@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>San Valentín 💘</title>
-
-    <!-- IMPORTANTE PARA CELULARES -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -55,6 +53,8 @@
         .no {
             background-color: #6c757d;
             color: white;
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .hidden {
@@ -73,6 +73,12 @@
             font-size: clamp(16px, 4vw, 18px);
             color: #e63946;
         }
+
+        .mensaje-no {
+            margin-top: 10px;
+            color: #555;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
@@ -80,7 +86,14 @@
 <div class="card" id="menu">
     <h1>💘 ¿Quieres ser mi San Valentín? 💘</h1>
     <button class="si" onclick="aceptar()">Sí ❤️</button>
-    <button class="no" onclick="rechazar()">No 😅</button>
+
+    <!-- BOTÓN NO BLOQUEADO -->
+    <button class="no" onclick="intentoNo()">No 😅</button>
+
+    <div id="mensajeNo" class="mensaje-no hidden">
+        ❌ Esta opción no está disponible para ti 😌<br>
+        Selecciona <strong>SÍ</strong> y continuamos 💘
+    </div>
 </div>
 
 <div class="card hidden" id="si">
@@ -95,35 +108,20 @@
     </div>
 </div>
 
-<div class="card hidden" id="no">
-    <h1>❌ Opción no disponible ❌</h1>
-    <p>
-        Esta opción no está disponible para ti.<br><br>
-        Vuelve al menú anterior y selecciona <strong>SÍ</strong>.<br>
-        No te queda de otra 😌💘
-    </p>
-    <button onclick="volver()">Volver 🔄</button>
-</div>
-
 <script>
     function aceptar() {
         document.getElementById("menu").classList.add("hidden");
         document.getElementById("si").classList.remove("hidden");
     }
 
-    function rechazar() {
-        document.getElementById("menu").classList.add("hidden");
-        document.getElementById("no").classList.remove("hidden");
-    }
-
-    function volver() {
-        document.getElementById("no").classList.add("hidden");
-        document.getElementById("menu").classList.remove("hidden");
+    function intentoNo() {
+        document.getElementById("mensajeNo").classList.remove("hidden");
     }
 </script>
 
 </body>
 </html>
+
 
 
 
