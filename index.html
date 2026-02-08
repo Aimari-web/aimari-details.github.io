@@ -70,11 +70,15 @@
 </div>
 
 <div class="card hidden" id="si">
-    <h1>💖 Sabía que dirías que sí 💖</h1>
-    <p>Sube una foto nuestra (o la que tú quieras):</p>
-    <input type="file" accept="image/*" onchange="mostrarFoto(event)">
-    <div class="frase">Gracias por hacer mis días más felices 💕</div>
-    <img id="foto">
+    <h1>💖 Entonces ya está decidido 💖</h1>
+
+    <!-- FOTO QUE SUBES TÚ -->
+    <img src="foto_san_valentin.jpg" alt="Nuestra foto">
+
+    <div class="frase">
+        Gracias por ser mi persona favorita.  
+        Este San Valentín y todos los que vienen 💕
+    </div>
 </div>
 
 <div class="card hidden" id="no">
@@ -102,13 +106,9 @@
         document.getElementById("no").classList.add("hidden");
         document.getElementById("menu").classList.remove("hidden");
     }
-
-    function mostrarFoto(event) {
-        const img = document.getElementById("foto");
-        img.src = URL.createObjectURL(event.target.files[0]);
-    }
 </script>
 
 </body>
 </html>
+
 
