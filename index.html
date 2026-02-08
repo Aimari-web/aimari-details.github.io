@@ -20,19 +20,22 @@
         .card {
             background: white;
             padding: 25px;
-            border-radius: 18px;
-            max-width: 520px;
+            border-radius: 20px;
+            max-width: 420px;
             width: 100%;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         h1 {
             color: #e63946;
-            font-size: clamp(22px, 5vw, 28px);
+            font-size: 22px;
             margin-bottom: 20px;
+        }
+
+        .botones {
+            position: relative;
+            height: 130px;
         }
 
         button {
@@ -41,10 +44,10 @@
             padding: 14px;
             font-size: 18px;
             border: none;
-            border-radius: 14px;
+            border-radius: 16px;
             cursor: pointer;
-            margin: 10px auto;
             display: block;
+            margin: 0 auto;
         }
 
         .si {
@@ -56,26 +59,26 @@
             background-color: #6c757d;
             color: white;
             position: absolute;
+            top: 60px;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        .hidden {
-            display: none;
-        }
-
         img {
             width: 100%;
-            max-width: 420px;
-            border-radius: 14px;
+            border-radius: 16px;
             margin-top: 15px;
         }
 
         .frase {
             margin-top: 18px;
-            font-size: clamp(16px, 4vw, 18px);
+            font-size: 16px;
             color: #e63946;
             line-height: 1.5;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -85,23 +88,23 @@
 <div class="card" id="menu">
     <h1>💘 ¿Quieres ser mi San Valentín? 💘</h1>
 
-    <button class="si" onclick="aceptar()">Sí 💖</button>
-    <button class="no" id="btnNo">No 😅</button>
+    <div class="botones">
+        <button class="si" onclick="aceptar()">Sí 💖</button>
+        <button class="no" id="btnNo">No 😅</button>
+    </div>
 </div>
 
 <!-- PANTALLA SÍ -->
 <div class="card hidden" id="si">
     <h1>💖 Entonces ya está decidido 💖</h1>
 
-    <!-- CAMBIA EL NOMBRE DE LA FOTO -->
     <img src="foto_san_valentin.jpg" alt="Nuestra foto">
 
     <div class="frase">
         Gracias, mi <strong>ram</strong>, por aceptar ser mi <strong>San Valentín</strong> una vez más 💕💘<br><br>
         Eres el amor de mi vida y mi mayor motivación, junto a nuestra <strong>Tanita</strong> 🥰👶🐾,
         nuestros bebés perrunos y gatunos 🐶🐱💕.<br><br>
-        Son mi familia, mi hogar y mi todo 🏡❤️.
-        Siempre me esforzaré por darles todo lo que se merecen, porque ustedes son mi razón de seguir adelante cada día ✨💪.<br><br>
+        Son mi familia, mi hogar y mi todo 🏡❤️.<br><br>
         Gracias por hacerme el hombre más feliz del mundo 🌍💖.<br>
         Te amo, <strong>amor de mi vida</strong> 💕💞
     </div>
@@ -110,18 +113,20 @@
 <script>
     const btnNo = document.getElementById("btnNo");
     const menu = document.getElementById("menu");
+    const si = document.getElementById("si");
+    const contenedor = document.querySelector(".botones");
 
     function aceptar() {
         menu.classList.add("hidden");
-        document.getElementById("si").classList.remove("hidden");
+        si.classList.remove("hidden");
     }
 
     function moverBoton() {
-        const cardRect = menu.getBoundingClientRect();
+        const contRect = contenedor.getBoundingClientRect();
         const btnRect = btnNo.getBoundingClientRect();
 
-        const maxX = cardRect.width - btnRect.width - 20;
-        const maxY = cardRect.height - btnRect.height - 20;
+        const maxX = contRect.width - btnRect.width;
+        const maxY = contRect.height - btnRect.height;
 
         const x = Math.random() * maxX;
         const y = Math.random() * maxY;
@@ -139,8 +144,5 @@
 
 </body>
 </html>
-
-
-
 
 
