@@ -2,147 +2,113 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIMARI DETAILS</title>
+    <title>San Valentín 💘</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
-
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             text-align: center;
-            margin: 0;
-            background-color: #fef6f8; /* El color de fondo rosado para toda la página */
-            padding: 0;
-            position: relative;
+            padding: 40px;
+            color: #333;
         }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px; /* Espacio entre secciones */
-            width: 100%;
-            max-width: 800px; /* Limita el tamaño máximo del contenedor */
-            margin-left: auto;
-            margin-right: auto;
-            background: transparent; /* Fondo transparente */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .logo {
-            width: 100%;
-            max-width: 300px; /* Aumenté el tamaño a 300px */
-            height: auto;
-            margin-bottom: 10px;
+        h1 {
+            color: #e63946;
         }
 
         button {
-            background-color: #E35B9A;
-            color: white;
-            padding: 15px 30px;
-            margin: 10px;
+            padding: 12px 25px;
+            font-size: 18px;
             border: none;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            margin: 10px;
         }
 
-        button:hover {
-            background-color: #2B4F80;
+        .si {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .no {
+            background-color: #6c757d;
+            color: white;
         }
 
         .hidden {
             display: none;
         }
 
-        .icon {
-            width: 20px;
-            height: 20px;
+        img {
+            max-width: 100%;
+            margin-top: 15px;
+            border-radius: 10px;
         }
 
-        /* Estilos para centrar el botón de "Volver a la página principal" */
-        .volver-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px; /* Espacio respecto a la sección anterior */
-        }
-
-        /* Mensaje de bienvenida */
-        .welcome-message {
-            font-size: 24px;
-            color: #e91e63;
-            font-weight: bold;
-            margin-top: 30px;
-            font-style: italic;
-        }
-
-        /* Media query para mejorar la visualización en pantallas pequeñas */
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
-
-            .container {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-
-            .logo {
-                max-width: 250px;
-            }
-
-            button {
-                padding: 12px 24px;
-                font-size: 14px;
-            }
-
-            .welcome-message {
-                font-size: 20px;
-            }
+        .frase {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #e63946;
         }
     </style>
-    <script>
-        function mostrarSeccion(seccion) {
-            document.getElementById('catalogos').classList.add('hidden');
-            document.getElementById('contactenos').classList.add('hidden');
-            document.getElementById(seccion).classList.remove('hidden');
-        }
-    </script>
 </head>
 <body>
-    <!-- Sin las decoraciones de las esquinas eliminadas -->
 
-    <div class="container" id="catalogos">
-        <img src="detalles.jpg" alt="Logo Aimari Details" class="logo">
-        <h1>AIMARI DETAILS</h1>
-        <p class="welcome-message">¡Bienvenidos a nuestro catálogo de detalles encantadores! 🌹💖</p>
-        <button onclick="window.open('catalogo.pdf', '_blank')">CATÁLOGO</button>
-        <button onclick="mostrarSeccion('contactenos')">CONTACTENOS</button>
-    </div>
-    
-    <div class="container hidden" id="contactenos">
-        <h1>Contáctenos</h1>
-        <p class="welcome-message">Síguenos en nuestras redes sociales y comparte la magia de AIMARI. 💖</p>
-        <button onclick="window.open('https://www.tiktok.com/@aimari_details', '_blank')">
-            <img class="icon" src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"> TikTok
-        </button>
-        <button onclick="window.open('https://www.instagram.com/aimari_details/', '_blank')">
-            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
-        </button>
-        <br>
-        <button onclick="mostrarSeccion('catalogos')">Volver</button>
-    </div>
-    
-    <!-- Botón "Volver a la Página Principal" centrado -->
-    <div class="volver-container">
-        <button onclick="window.location.href='https://aimari-web.github.io/'">Volver a la página principal</button>
-    </div>
+<div class="card" id="menu">
+    <h1>💘 ¿Quieres ser mi San Valentín? 💘</h1>
+    <button class="si" onclick="aceptar()">Sí ❤️</button>
+    <button class="no" onclick="rechazar()">No 😅</button>
+</div>
+
+<div class="card hidden" id="si">
+    <h1>💖 Sabía que dirías que sí 💖</h1>
+    <p>Sube una foto nuestra (o la que tú quieras):</p>
+    <input type="file" accept="image/*" onchange="mostrarFoto(event)">
+    <div class="frase">Gracias por hacer mis días más felices 💕</div>
+    <img id="foto">
+</div>
+
+<div class="card hidden" id="no">
+    <h1>❌ Opción no disponible ❌</h1>
+    <p>
+        Esta opción no está disponible para ti.<br><br>
+        Vuelve al menú anterior y selecciona <strong>SÍ</strong>.<br>
+        No te queda de otra 😌💘
+    </p>
+    <button onclick="volver()">Volver 🔄</button>
+</div>
+
+<script>
+    function aceptar() {
+        document.getElementById("menu").classList.add("hidden");
+        document.getElementById("si").classList.remove("hidden");
+    }
+
+    function rechazar() {
+        document.getElementById("menu").classList.add("hidden");
+        document.getElementById("no").classList.remove("hidden");
+    }
+
+    function volver() {
+        document.getElementById("no").classList.add("hidden");
+        document.getElementById("menu").classList.remove("hidden");
+    }
+
+    function mostrarFoto(event) {
+        const img = document.getElementById("foto");
+        img.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+
 </body>
 </html>
+
